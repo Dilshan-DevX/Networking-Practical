@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.example.np.entity.Student;
 import org.example.np.util.HibernateUtil;
+import org.example.np.util.JwtUtil;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -14,9 +15,10 @@ import java.util.List;
 @Path("/test")
 public class Test {
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String test(){
-        return "done";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response test(){
+
+        return Response.ok(JwtUtil.genarateToken("john.doe@example.com")).build();
     }
 
     @GET
