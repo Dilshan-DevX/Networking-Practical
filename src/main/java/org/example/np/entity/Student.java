@@ -13,6 +13,7 @@ public class Student implements Serializable {
     @Column(length = 150 )
     private String name;
     private int age;
+    private String course;
 
     public int getId() {
         return id;
@@ -46,5 +47,5 @@ public class Student implements Serializable {
         this.age = age;
     }
 
-    private String course;
+
 }
